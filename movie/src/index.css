@@ -1,0 +1,142 @@
+/* General Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #141414; /* Dark background for a cinematic feel */
+  color: #ffffff; /* White text for contrast */
+  line-height: 1.6;
+}
+
+/* Header Styles */
+h1 {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 2.5rem;
+  color: #e50914; /* Netflix-like red for branding */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8), transparent);
+}
+
+/* Movie List Container */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+/* Movie Card Styles */
+.movieList {
+  background-color: #1c1c1c; /* Dark card background */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movieList:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.movieList img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover; /* Ensure posters fill the space */
+  display: block;
+}
+
+/* Movie Details */
+.leftSide {
+  padding: 1rem;
+}
+
+.movieList h2 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.movieList h3 {
+  font-size: 1.2rem;
+  color: #ffd700; /* Gold for ratings or status */
+  font-weight: normal;
+  margin-bottom: 0.5rem;
+}
+
+.movieList h3:last-child {
+  color: #cccccc; /* Lighter gray for release status */
+  font-size: 1rem;
+}
+
+/* Empty Catalog Message */
+p {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #cccccc;
+  padding: 2rem;
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #0f0f0f;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer span {
+  font-size: 1rem;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+footer span::before {
+  content: '🎬 ';
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    padding: 1.5rem 0;
+  }
+
+  .movieList h2 {
+    font-size: 1.3rem;
+  }
+
+  .movieList img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .movieList img {
+    height: 250px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
