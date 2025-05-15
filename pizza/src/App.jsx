@@ -73,7 +73,7 @@ function Menu() {
                     pizzaNum > 0 ?  <ul className="pizzas">
                     {
                       pizzas.map((pizza)=> <Pizza  pizzaObj={pizza} key={pizza.name}></Pizza>)
-                    }
+                    } 
                   </ul> : <p>We are working on menu come back Later.</p>
                   }
 
