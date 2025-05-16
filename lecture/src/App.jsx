@@ -1,6 +1,6 @@
 const lectureData = [
   {
-    title:"Usul",
+    title:"Usul1",
     speaker:"Ustaz Muhammad",
     length:120,
     category:"Tawheed",
@@ -9,7 +9,7 @@ const lectureData = [
 
   },
   {
-    title:"Usul",
+    title:"Usul2",
     speaker:"Ustaz Muhammad",
     length:120,
     category:"Tawheed",
@@ -18,7 +18,7 @@ const lectureData = [
 
   },
   {
-    title:"Usul",
+    title:"Usul3",
     speaker:"Ustaz Muhammad",
     length:120,
     category:"Tawheed",
@@ -27,7 +27,7 @@ const lectureData = [
 
   },
   {
-    title:"Usul",
+    title:"Usul4",
     speaker:"Ustaz Muhammad",
     length:120,
     category:"Tawheed",
@@ -36,7 +36,7 @@ const lectureData = [
 
   },
   {
-    title:"Usul",
+    title:"Usul5",
     speaker:"Sheikh Muhammad",
     length:120,
     category:"Tawheed",
@@ -87,10 +87,13 @@ function AvailableLectures() {
         return <ul className="availabel-aontainer">
         <h3 className="availabeheader">AvailableLectures List</h3>
         {
-          lectureData.map((lecture)=> {
-            if(lecture.isAvailable) return <AvailableLecture Available={lecture}></AvailableLecture>
-          })
-        }
+          /*{ lectureData.map((lecture)=> {
+            if(lecture.isAvailable) return <AvailableLecture Available={lecture}></AvailableLecture> } */
+            lectureData.filter((lecture)=>lecture.isAvailable).map((lecture)=> {
+             return <AvailableLecture Available={lecture}></AvailableLecture>
+            })
+            
+          } 
               </ul>
 }
 function AvailableLecture({Available}) {
