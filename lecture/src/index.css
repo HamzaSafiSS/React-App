@@ -1,0 +1,183 @@
+/* Global Styles */
+:root {
+  --primary-color: #2c5fa8;
+  --secondary-color: #e8c07d;
+  --dark-color: #1e293b;
+  --light-color: #f8fafc;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f5f7fa;
+  color: var(--dark-color);
+  line-height: 1.6;
+}
+
+/* Header Styles */
+.header {
+  background: linear-gradient(135deg, var(--primary-color), #3b82f6);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--box-shadow);
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Container Styles */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+  margin-bottom: 3rem;
+}
+
+.availabel-container {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  margin: 2rem;
+  box-shadow: var(--box-shadow);
+}
+
+.availabeheader {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+/* Lecture Card Styles */
+.lecture, .Available {
+  background: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  position: relative;
+}
+
+.lecture:hover, .Available:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.lecture::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: var(--warning-color);
+}
+
+.Available::before {
+  background-color: var(--success-color);
+}
+
+.lecture img, .Available img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.lecture h2, .Available h2 {
+  color: var(--primary-color);
+  padding: 1rem 1rem 0;
+  font-size: 1.4rem;
+}
+
+.lecture h3, .Available h3 {
+  color: var(--dark-color);
+  padding: 0 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.lecture p, .Available p {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lecture p:last-child, .Available p:last-child {
+  padding-bottom: 1.5rem;
+}
+
+/* Status Badges */
+.lecture p:last-child::before, 
+.Available p:last-child::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.lecture p:last-child::before {
+  background-color: var(--error-color);
+}
+
+.Available p:last-child::before {
+  background-color: var(--success-color);
+}
+
+/* Coming Soon Tag */
+.lecture p:nth-last-child(2) {
+  color: var(--warning-color);
+  font-weight: 500;
+}
+
+/* Updated Soon Message */
+.updatedSoon {
+  display: block;
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--warning-color);
+  padding: 2rem;
+  background-color: rgba(245, 158, 11, 0.1);
+  border-radius: var(--border-radius);
+  margin: 2rem;
+  border-left: 4px solid var(--warning-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .availabel-container {
+    margin: 1rem;
+  }
+}
