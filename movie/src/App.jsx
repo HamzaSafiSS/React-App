@@ -63,8 +63,16 @@ function Footer() {
   const hour = new Date()
   const curHour = hour.getHours()
   if(curHour > 9 && curHour < 21)
-return <footer>Open for Movie Suggestions</footer>
-return <footer>We're offline now. Catch you later!</footer>
+return <footer>
+<span>
+Open for Movie Suggestions
+</span>
+</footer>
+return <footer>
+<span>
+We're offline now. Catch you later!
+</span>
+</footer>
 }
 
 
